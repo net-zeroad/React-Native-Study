@@ -4,18 +4,18 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.containerOne}>
 
+      <View style={styles.containerOne}>
       </View>
+
       <View style={styles.containerTwo}>
         <View style={styles.innerOne}>
-
         </View>
         <View style={styles.innerTwo}>
-          <Text style={styles.textStyle}>앙뇽하세요 ㅇㅅㅇ~!!</Text>
+          <View style={styles.content}></View>
         </View>
-
       </View>
+
     </View>
   );
 }
@@ -41,15 +41,13 @@ const styles = StyleSheet.create({
   },
   innerTwo: {
     flex: 4,
-    // justifyContent: "flex-start",
-    // justifyContent: "flex-end",
-    justifyContent: "center",
-    // flexDirection: "column",
-    flexDirection: "row",
-    backgroundColor: "orange"
+    backgroundColor: "orange",
+    alignItems: "flex-end"
   },
-  textStyle: {
-    color: "white",
-    fontWeight: "700"
+
+  content: {
+    width: 50,
+    height: 50,
+    backgroundColor: "#000"
   }
 });
