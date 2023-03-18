@@ -12,7 +12,7 @@ export default function App() {
 
         </View>
         <View style={styles.innerTwo}>
-
+          <Text style={styles.textStyle}>앙뇽하세요 ㅇㅅㅇ~!!</Text>
         </View>
 
       </View>
@@ -26,22 +26,30 @@ const styles = StyleSheet.create({
   },
 
   containerOne: {
-    flex: 2,
+    flex: 1,
     backgroundColor: "red"
   },
   containerTwo: {
-    flex: 4,
-    // flexDirection: "row",
-    flexDirection: "column",
+    flex: 2,
+    flexDirection: "row",
     backgroundColor: "yellow"
   },
 
   innerOne: {
-    flex: 2,
+    flex: 1,
     backgroundColor: "blue"
   },
   innerTwo: {
     flex: 4,
-    backgroundColor: "yellow"
+    // justifyContent: "flex-start",
+    // justifyContent: "flex-end",
+    justifyContent: "center",
+    // flexDirection: "column",
+    flexDirection: "row",
+    backgroundColor: "orange"
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "700"
   }
 });
