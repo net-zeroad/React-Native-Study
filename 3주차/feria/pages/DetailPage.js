@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, ScrollView, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, ScrollView, Image, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 
 export default function DetailPage() {
 
@@ -12,13 +12,17 @@ export default function DetailPage() {
         "date": "2020.09.09"
     }
 
+    const popup = () => {
+        Alert.alert("찜");
+    }
+
     return (
         <ScrollView style={styles.mainWrap}>
             <Image style={styles.mainImage} source={{ uri: tip.image }} />
             <Text style={styles.mainTitle}>{tip.title}</Text>
             <Text style={styles.mainText}>{tip.desc}</Text>
             <View style={styles.likeBtnWrap}>
-                <TouchableOpacity style={styles.likeBtn}>
+                <TouchableOpacity style={styles.likeBtn} onPress={popup}>
                     <Text style={styles.likeBtnText}>팁 찜하기</Text>
                 </TouchableOpacity>
             </View>
