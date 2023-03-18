@@ -18,9 +18,10 @@ export default function App() {
   return (
     // View를 ScrollView로 만들어 준다.
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>나만의 꿀팁</Text>
+      <Text style={styles.title}>혜리미에 꿀팁 ㅇㅅㅇ</Text>
       <Image style={styles.mainImage} source={{ uri: main }} />
       {/* 카테고리 목록, horizontal : 아이템들을 펼쳐지게 한다(중요), indicatorStyle : 무슨 역할인지 모르겠다. */}
+      {/* ScrollView 가로 정렬(수평 스크롤, 횡 스크롤) */}
       <ScrollView style={styles.middleContainer} horizontal indicatorStyle={"white"}>
         <TouchableOpacity style={styles.middleButton01}><Text style={styles.middleButtonText}>생활</Text></TouchableOpacity>
         <TouchableOpacity style={styles.middleButton02}><Text style={styles.middleButtonText}>재테크</Text></TouchableOpacity>
@@ -32,10 +33,30 @@ export default function App() {
         <View style={styles.card}>
           <Image style={styles.cardImage} source={{ uri: "https://firebasestorage.googleapis.com/v0/b/sparta-image.appspot.com/o/lecture%2Fpizza.png?alt=media&token=1a099927-d818-45d4-b48a-7906fd0d2ad3" }} />
           <View style={styles.cardText}>
-            <Text style={styles.cardTitle}>먹다 남은 피자를 촉촉하게!</Text>
+            <Text style={styles.cardTitle}>먹다 남은 피자를 촉촉하게 #1</Text>
             {/* numberOfLines : 몇 줄까지 표시할 것인지 설정한다. */}
-            <Text style={styles.cardDesc} numberOfLines={3}>먹다 남은 피자는 수분이 날라가기 때문에 처음처럼 맛있게 먹을 수 없는데요. 이럴 경우 그릇에 물을 받아 전자레인지 안에서 1분 30초에서 2분 정도 함께 돌려주면 촉촉하게 먹을 수 있습니다. 물이 전자레인지 안에서 수증기를 일으키고, 피자에 촉촉함을 더해줍니다.</Text>
-            <Text style={styles.cardDate}>2020.09.09</Text>
+            <Text style={styles.cardDesc} numberOfLines={3}>먹다 남은 피자는 수분이 나비처럼 훨훨 날아가기 때문에 처음처럼 맛있게 먹을 수 없는데요. 이럴 경우 그릇에 물을 받아 전자레인지 안에서 1분 30초에서 2분 정도 함께 돌려주면 촉촉하게 먹을 수 있습니다. 물이 전자레인지 안에서 수증기를 일으키고, 피자에 촉촉함을 더해줍니다.</Text>
+            <Text style={styles.cardDate}>2023. 3. 19.</Text>
+          </View>
+        </View>
+        {/* 하나의 카드 영역을 나타내는 View */}
+        <View style={styles.card}>
+          <Image style={styles.cardImage} source={{ uri: "https://firebasestorage.googleapis.com/v0/b/sparta-image.appspot.com/o/lecture%2Fpizza.png?alt=media&token=1a099927-d818-45d4-b48a-7906fd0d2ad3" }} />
+          <View style={styles.cardText}>
+            <Text style={styles.cardTitle}>먹다 남은 피자를 촉촉하게 #2</Text>
+            {/* numberOfLines : 몇 줄까지 표시할 것인지 설정한다. */}
+            <Text style={styles.cardDesc} numberOfLines={3}>먹다 남은 피자는 수분이 나비처럼 훨훨 날아가기 때문에 처음처럼 맛있게 먹을 수 없는데요. 이럴 경우 그릇에 물을 받아 전자레인지 안에서 1분 30초에서 2분 정도 함께 돌려주면 촉촉하게 먹을 수 있습니다. 물이 전자레인지 안에서 수증기를 일으키고, 피자에 촉촉함을 더해줍니다.</Text>
+            <Text style={styles.cardDate}>2023. 3. 19.</Text>
+          </View>
+        </View>
+        {/* 하나의 카드 영역을 나타내는 View */}
+        <View style={styles.card}>
+          <Image style={styles.cardImage} source={{ uri: "https://firebasestorage.googleapis.com/v0/b/sparta-image.appspot.com/o/lecture%2Fpizza.png?alt=media&token=1a099927-d818-45d4-b48a-7906fd0d2ad3" }} />
+          <View style={styles.cardText}>
+            <Text style={styles.cardTitle}>먹다 남은 피자를 촉촉하게 #3</Text>
+            {/* numberOfLines : 몇 줄까지 표시할 것인지 설정한다. */}
+            <Text style={styles.cardDesc} numberOfLines={3}>먹다 남은 피자는 수분이 나비처럼 훨훨 날아가기 때문에 처음처럼 맛있게 먹을 수 없는데요. 이럴 경우 그릇에 물을 받아 전자레인지 안에서 1분 30초에서 2분 정도 함께 돌려주면 촉촉하게 먹을 수 있습니다. 물이 전자레인지 안에서 수증기를 일으키고, 피자에 촉촉함을 더해줍니다.</Text>
+            <Text style={styles.cardDate}>2023. 3. 19.</Text>
           </View>
         </View>
 
@@ -136,13 +157,14 @@ const styles = StyleSheet.create({
   card: {
     flex: 1,
     //컨텐츠들(이미지와 텍스트 영역)을 가로로 나열한다.
-    //세로로 나열은 column <- 디폴트 값임 
+    //세로로 나열은 column <- 디폴트 값임 (flexDirection : 중요)
     flexDirection: "row",
     margin: 10,
+    // 해당 컨텐츠의 아래 부분에 생길 border의 크기를 지정해준다.
     borderBottomWidth: 0.5,
+    // 해당 컨텐츠의 아래 부분에 생길 border의 색상을 지정해준다.
     borderBottomColor: "#eee",
     paddingBottom: 10
-
   },
 
   cardImage: {
