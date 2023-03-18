@@ -50,8 +50,8 @@ export default function App() {
             </View>
           ) :
             // 짝수 번째일 경우
-            <View style={styles.card} key={idx}>
-              <Text>{"     "}</Text>
+            <View style={styles.card2} key={idx}>
+              {/* <Text>{"     "}</Text> */}
               <Image style={styles.cardImage} source={{ uri: item.image }} />
               <View style={styles.cardText}>
                 <Text style={styles.cardTitle} numberOfLines={1}>
@@ -170,8 +170,21 @@ const styles = StyleSheet.create({
     // 해당 컨텐츠의 아래 부분에 생길 border의 크기를 지정해준다.
     borderBottomWidth: 0.5,
     // 해당 컨텐츠의 아래 부분에 생길 border의 색상을 지정해준다.
-    borderBottomColor: "#eee",
+    // borderBottomColor: "#eee",
+    borderBottomColor: "lightpink",
     paddingBottom: 10
+  },
+  card2: {
+    flex: 1,
+    //컨텐츠들(이미지와 텍스트 영역)을 가로로 나열한다.
+    //세로로 나열은 column <- 디폴트 값임 (flexDirection : 중요)
+    flexDirection: "row",
+    margin: 10,
+    // 해당 컨텐츠의 아래 부분에 생길 border의 크기를 지정해준다.
+    borderBottomWidth: 0.5,
+    // 해당 컨텐츠의 아래 부분에 생길 border의 색상을 지정해준다.
+    borderBottomColor: "lightblue",
+    paddingBottom: 10,
   },
 
   cardImage: {
