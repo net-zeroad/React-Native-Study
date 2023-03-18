@@ -23,7 +23,7 @@ expo efforthye
 - sparta-study 폴더 생성
 - 해당 폴더에 아래 명령어 입력
 expo init feria
-이후 blank 선택 -> 기본 앱 생성됨
+이후 blank 를 enter로 선택 -> 기본 앱 생성됨
 3. 생성한 앱 폴더 접근 및 실행
 cd feria
 expo start 혹은 npx expo start 혹은 expo start --tunnel 
