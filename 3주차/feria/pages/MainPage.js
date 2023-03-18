@@ -5,6 +5,8 @@ import data from '../data.json';
 import Card from '../components/Card';
 import Loading from '../components/Loading';
 
+import { StatusBar } from 'expo-status-bar';
+
 export default function MainPage() {
 
     // 메인 이미지의 절대경로 주소를 가져온다.
@@ -58,6 +60,9 @@ export default function MainPage() {
         ready ? <Loading /> : (
             // View를 ScrollView로 만들어 준다.
             <ScrollView style={styles.container}>
+
+                {/* 상태 바 라이브러리를 사용하여 상태 바야 하얀색(안보이게)으로 보이게 하였다. */}
+                <StatusBar style='light' />
 
                 <Text style={styles.title}>혜리미에 꿀팁 ㅇㅅㅇ</Text>
                 <Text style={styles.weather}>오늘의 날씨: {todayWeather + "°C, " + todayCondition}</Text>
