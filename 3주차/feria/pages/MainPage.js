@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 
 import data from '../data.json';
+import Card from '../components/Card';
 
 export default function MainPage() {
 
@@ -36,32 +37,7 @@ export default function MainPage() {
             <View style={styles.cardContainer}>
 
                 {tipCards.map((item, idx) => (
-                    idx % 2 == 0 ? (
-                        // 홀수 번째일 경우(idx는 0부터 시작하기 때문)
-                        <View style={styles.card} key={idx}>
-                            <Image style={styles.cardImage} source={{ uri: item.image }} />
-                            <View style={styles.cardText}>
-                                <Text style={styles.cardTitle} numberOfLines={1}>
-                                    #{idx + 1} {item.title}
-                                </Text>
-                                <Text style={styles.cardDesc} numberOfLines={3}>{item.desc}</Text>
-                                <Text style={styles.cardDate}>{item.date}</Text>
-                            </View>
-                        </View>
-                    ) : (
-                        // 짝수 번째일 경우
-                        <View style={styles.card2} key={idx}>
-                            {/* <Text>{"     "}</Text> */}
-                            <Image style={styles.cardImage} source={{ uri: item.image }} />
-                            <View style={styles.cardText}>
-                                <Text style={styles.cardTitle} numberOfLines={1}>
-                                    #{idx + 1} {item.title}
-                                </Text>
-                                <Text style={styles.cardDesc} numberOfLines={3}>{item.desc}</Text>
-                                <Text style={styles.cardDate}>{item.date}</Text>
-                            </View>
-                        </View>
-                    )
+                    <Card item={item} idx={idx} key={idx} />
                 ))}
 
             </View>
