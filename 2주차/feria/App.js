@@ -195,7 +195,9 @@ const styles = StyleSheet.create({
   },
   cardText: {
     flex: 3,
-    flexDirection: "column",
+    // 컨텐츠의 방향을 아래로 내려보도록(column) 설정하였다.
+    // 근데 사실 column이 기본값이라 넣어줄 필요는 없다.
+    // flexDirection: "column",
     marginLeft: 10,
   },
 
