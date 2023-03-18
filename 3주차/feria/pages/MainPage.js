@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 
 import data from '../data.json';
 import Card from '../components/Card';
+import Loading from '../components/Loading';
 
 export default function MainPage() {
 
     // 메인 이미지의 절대경로 주소를 가져온다.
     const main = "https://firebasestorage.googleapis.com/v0/b/sparta-image.appspot.com/o/lecture%2Fmain.png?alt=media&token=8e5eb78d-19ee-4359-9209-347d125b322c";
 
+    // useState() 를 사용해 본다.
+    const [state, setState] = useState([]);
+    const [ready, setReady] = useState(true);
+
+    // useEffect() 를 사용해 본다.
+    useEffect(() => {
+        setState(data);
+        setReady(false);
+    }, []);
+
+    // 이처럼 화면이 없을 때 로딩 화면을 우선 보여주면 된다.
+
+
     // data.json의 tip을 불러온다.
-    let tipCards = data.tip;
+    let tipCards = state.tip;
     // 앱 상단에 띄울 오늘의 온도를 지정해준다. 
     let todayWeather = 10 + 7;
     // 앱 상단에 띄울 오늘의 날씨를 지정해준다. 
@@ -18,31 +32,33 @@ export default function MainPage() {
 
     return (
         // View를 ScrollView로 만들어 준다.
-        <ScrollView style={styles.container}>
+        ready ? <Loading /> : (
+            <ScrollView style={styles.container}>
 
-            <Text style={styles.title}>혜리미에 꿀팁 ㅇㅅㅇ</Text>
-            <Text style={styles.weather}>오늘의 날씨: {todayWeather + "°C, " + todayCondition}</Text>
+                <Text style={styles.title}>혜리미에 꿀팁 ㅇㅅㅇ</Text>
+                <Text style={styles.weather}>오늘의 날씨: {todayWeather + "°C, " + todayCondition}</Text>
 
-            <Image style={styles.mainImage} source={{ uri: main }} />
+                <Image style={styles.mainImage} source={{ uri: main }} />
 
-            {/* 카테고리 목록, horizontal : 아이템들을 펼쳐지게 한다(중요), indicatorStyle : 무슨 역할인지 모르겠다. */}
-            {/* ScrollView 가로 정렬(수평 스크롤, 횡 스크롤) */}
-            <ScrollView style={styles.middleContainer} horizontal indicatorStyle={"white"}>
-                <TouchableOpacity style={styles.middleButton01}><Text style={styles.middleButtonText}>생활</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.middleButton02}><Text style={styles.middleButtonText}>재테크</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.middleButton03}><Text style={styles.middleButtonText}>반려견</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.middleButton04}><Text style={styles.middleButtonText}>찜한 꿀팁</Text></TouchableOpacity>
+                {/* 카테고리 목록, horizontal : 아이템들을 펼쳐지게 한다(중요), indicatorStyle : 무슨 역할인지 모르겠다. */}
+                {/* ScrollView 가로 정렬(수평 스크롤, 횡 스크롤) */}
+                <ScrollView style={styles.middleContainer} horizontal indicatorStyle={"white"}>
+                    <TouchableOpacity style={styles.middleButton01}><Text style={styles.middleButtonText}>생활</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.middleButton02}><Text style={styles.middleButtonText}>재테크</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.middleButton03}><Text style={styles.middleButtonText}>반려견</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.middleButton04}><Text style={styles.middleButtonText}>찜한 꿀팁</Text></TouchableOpacity>
+                </ScrollView>
+
+                <View style={styles.cardContainer}>
+
+                    {tipCards.map((item, idx) => (
+                        <Card item={item} idx={idx} key={idx} />
+                    ))}
+
+                </View>
+
             </ScrollView>
-
-            <View style={styles.cardContainer}>
-
-                {tipCards.map((item, idx) => (
-                    <Card item={item} idx={idx} key={idx} />
-                ))}
-
-            </View>
-
-        </ScrollView>
+        )
     )
 
 }

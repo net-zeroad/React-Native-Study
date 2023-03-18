@@ -2,6 +2,7 @@ import React from "react"
 import { View, Text, Image, StyleSheet } from "react-native";
 
 //비구조 할당 방식으로 넘긴 속성 데이터를 꺼내 사용함
+// idx와 item이 필요하며, item에는 image, title, desc, date가 필요하다.
 export default function Card({ item, idx }) {
     return (
         idx % 2 == 0 ? (
