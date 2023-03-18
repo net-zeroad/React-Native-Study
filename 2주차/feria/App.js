@@ -4,8 +4,8 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.textContainer}>
-        <Text style={styles.textStyle}>스파르타 코딩클럽!!</Text>
+      <View style={styles.textContainer2}>
+        <Text style={styles.textStyle}>Warning!</Text>
       </View>
     </View>
   );
@@ -17,25 +17,26 @@ const styles = StyleSheet.create({
     //flex: 1은 전체 화면을 가져간다는 뜻입니다
     flex: 1,
     //영역의 배경 색을 결정합니다
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     //아래 두 속성은 영역 안의 컨텐츠들의 배치를 결정합니다. 
     //flex를 자세히 다룰때 같이 자세히 다룹니다
     justifyContent: "center",
     alignContent: "center"
   },
-  textContainer: {
+  textContainer2: {
     //영역의 바깥 공간 이격을 뜻합니다(하단 이미지 참조)
-    margin: 10,
+    // margin: 100,
     //영역 안의 컨텐츠 이격 공간을 뜻합니다(하단 이미지 참조)
-    padding: 10,
+    padding: 30,
     //테두리의 구부러짐을 결정합니다. 지금 보면 조금 둥글죠?
-    borderRadius: 10,
+    borderRadius: 1,
     //테두리의 두께를 결정합니다
     borderWidth: 2,
     //테두리 색을 결정합니다
-    borderColor: "#000",
+    borderColor: "red",
     //테구리 스타일을 결정합니다. 실선은 solid 입니다
-    borderStyle: "dotted",
+    borderStyle: "solid",
+
 
   },
   textStyle: {
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     //글자의 크기를 결정합니다
     fontSize: 20,
     //글자의 두께를 결정합니다
-    fontWeight: "700",
+    fontWeight: "900",
     //가로기준으로 글자의 위치를 결정합니다
     textAlign: "center"
   }
