@@ -24,20 +24,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
+
   containerOne: {
     flex: 1,
-    backgroundColor: "black"
+    backgroundColor: "red"
   },
   containerTwo: {
     flex: 2,
-    backgroundColor: "purple"
+    flexDirection: "row",
+    backgroundColor: "yellow"
   },
+
   innerOne: {
     flex: 1,
-    backgroundColor: "white"
+    backgroundColor: "blue"
   },
   innerTwo: {
     flex: 4,
-    backgroundColor: "gray"
+    backgroundColor: "orange"
   }
 });
