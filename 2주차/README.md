@@ -80,3 +80,388 @@ const styles = StyleSheet.create({
 
 
 
+
+
+
+
+
+
+
+# View #
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.subContainerOne}></View>
+      <View style={styles.subContainerTwo}></View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  subContainerOne: {
+    flex:1,
+    backgroundColor:"yellow"
+  },
+  subContainerTwo: {
+    flex:1,
+    backgroundColor:"green"
+  }
+});
+
+
+
+
+
+# Text #
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text>문자는 Text 태그 사이에 작성!!</Text>
+      <Text>문자는 Text 태그 사이에 작성!!</Text>
+      <Text>문자는 Text 태그 사이에 작성!!</Text>
+      <Text>문자는 Text 태그 사이에 작성!!</Text>
+      <Text>문자는 Text 태그 사이에 작성!!</Text>
+      <Text>문자는 Text 태그 사이에 작성!!</Text>
+      <Text>문자는 Text 태그 사이에 작성!!</Text>
+      <Text>문자는 Text 태그 사이에 작성!!</Text>
+      <Text>문자는 Text 태그 사이에 작성!!</Text>
+      <Text>문자는 Text 태그 사이에 작성!!</Text>
+      <Text>문자는 Text 태그 사이에 작성!!</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
+
+
+
+# ScrollView - 1 #
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+		//각 태그들에는 style이라는 속성을 갖습니다.
+		//이 속성은 파일 최하단에 작성한 스타일 코드 객체의 키 값을 부여해
+    // 엘리먼트들에 스타일을 줄 수 있습니다.
+    //이는 JSX문법을 배우고 난 다음 더 자세히 다룹니다.
+    <View style={styles.container}>
+			{/* //보인 영역을 갖는 엘리먼트 7가 반복적으로 쓰였습니다. */}
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+    </View>
+  );
+}
+
+//텍스트가 영역을 갖고, 가운데 정렬도 하며, 테두리 스타일을 갖게 끔 하는 코드입니다.
+//JSX를 마저 배우고 스타일에 대해 자세히 다루니
+//걱정 안해도 좋습니다!
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  textContainer: {
+    height:100,
+    borderColor:'#000',
+    borderWidth:1,
+    borderRadius:10,
+    margin:10,
+  },
+  textStyle: {
+    textAlign:"center"
+  }
+});
+
+
+
+
+
+# ScrollView - 2 #
+import React from 'react';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+
+export default function App() {
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </View>
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  textContainer: {
+    height:100,
+    borderColor:'#000',
+    borderWidth:1,
+    borderRadius:10,
+    margin:10,
+  },
+  textStyle: {
+    textAlign:"center"
+  }
+});
+
+
+
+
+
+# Button #
+import React from 'react';
+import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>아래 버튼을 눌러주세요</Text>
+        {/* 버튼 onPress 속성에 일반 함수를 연결 할 수 있습니다. */}
+        <Button 
+          style={styles.buttonStyle} 
+          title="버튼입니다 "
+          color="#f194ff" 
+          onPress={function(){
+            Alert.alert('팝업 알람입니다!!')
+          }}
+        />
+        {/* ES6 문법으로 배웠던 화살표 함수로 연결 할 수도 있습니다. */}
+        <Button 
+            style={styles.buttonStyle} 
+            title="버튼입니다 "
+            color="#FF0000" 
+            onPress={()=>{
+              Alert.alert('팝업 알람입니다!!')
+            }}
+          />
+          </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  textContainer: {
+    height:100,
+    margin:10,
+  },
+  textStyle: {
+    textAlign:"center"
+  },
+});
+
+
+
+
+
+
+# TouchableOpacity
+import React from 'react';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Alert } from 'react-native';
+
+export default function App() {
+  const customAlert = () => {
+    Alert.alert("TouchableOpacity에도 onPress 속성이 있습니다")
+  }
+  return (
+    <ScrollView style={styles.container}>
+      <TouchableOpacity style={styles.textContainer} onPress={customAlert}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.textContainer} onPress={customAlert}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.textContainer} onPress={customAlert}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.textContainer} onPress={customAlert}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.textContainer} onPress={customAlert}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.textContainer} onPress={customAlert}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.textContainer} onPress={customAlert}>
+        <Text style={styles.textStyle}>영역을 충분히 갖는 텍스트 입니다!</Text>
+      </TouchableOpacity>
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  textContainer: {
+    height:100,
+    borderColor:'#000',
+    borderWidth:1,
+    borderRadius:10,
+    margin:10,
+  },
+  textStyle: {
+    textAlign:"center"
+  }
+});
+
+
+
+
+
+
+# Image - 상대경로 #
+import React from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
+//이렇게 상단에 가져와 사용할 이미지를 불러옵니다
+import favicon from "./assets/favicon.png"
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+			{/*이미지 태그 soruce 부분에 가져온 미지 이름을 넣습니다 */}
+      <Image 
+        source={favicon}
+				// 사용설명서에 나와 있는 resizeMode 속성 값을 그대로 넣어 적용합니다
+        resizeMode={"repeat"}
+        style={styles.imageStyle}
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    //혹시 미리 궁금하신 분들을 위해 언급하자면,
+    //justifyContent와 alignContent는 영역 안에 있는 콘텐츠들을 정렬합니다
+    justifyContent:"center",
+    alignContent:"center"
+  },
+  imageStyle: {
+    width:"100%",
+    height:"100%",
+    alignItems:"center",
+    justifyContent:"center"
+  }
+});
+
+
+
+
+
+
+# image - 절대경로 #
+import React from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
+//이렇게 상단에 가져와 사용할 이미지를 불러옵니다
+import favicon from "./assets/favicon.png"
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+			{/*이미지 태그 soruce 부분에 가져온 미지 이름을 넣습니다 */}
+      <Image 
+        source={{uri:'https://images.unsplash.com/photo-1424819827928-55f0c8497861?fit=crop&w=600&h=600%27'}}
+				// 사용설명서에 나와 있는 resizeMode 속성 값을 그대로 넣어 적용합니다
+        resizeMode={"cover"}
+        style={styles.imageStyle}
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    //혹시 미리 궁금하신 분들을 위해 언급하자면,
+    //justifyContent와 alignContent는 영역 안에 있는 콘텐츠들을 정렬합니다
+    justifyContent:"center",
+    alignContent:"center"
+  },
+  imageStyle: {
+    width:"100%",
+    height:"100%",
+    alignItems:"center",
+    justifyContent:"center"
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
