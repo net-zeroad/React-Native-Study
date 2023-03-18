@@ -16,8 +16,12 @@ export default function MainPage() {
 
     // useEffect() 를 사용해 본다.
     useEffect(() => {
-        setState(data);
-        setReady(false);
+
+        setTimeout(() => {
+            setState(data);
+            setReady(false);
+        }, 1000);
+
     }, []);
 
     // 이처럼 화면이 없을 때 로딩 화면을 우선 보여주면 된다.
