@@ -26,21 +26,22 @@ const styles = StyleSheet.create({
   },
 
   containerOne: {
-    flex: 1,
+    flex: 2,
     backgroundColor: "red"
   },
   containerTwo: {
-    flex: 2,
-    flexDirection: "row",
+    flex: 4,
+    // flexDirection: "row",
+    flexDirection: "column",
     backgroundColor: "yellow"
   },
 
   innerOne: {
-    flex: 1,
+    flex: 2,
     backgroundColor: "blue"
   },
   innerTwo: {
     flex: 4,
-    backgroundColor: "orange"
+    backgroundColor: "yellow"
   }
 });
