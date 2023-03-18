@@ -27,6 +27,7 @@ expo init feria
 3. 생성한 앱 폴더 접근 및 실행
 cd feria
 expo start 혹은 npx expo start 혹은 expo start --tunnel 
+expo start --tunnel 으로 실행해준다.
 -> 이후 터미널에 QR코드가 생성된다.
 -> 핸드폰의 expo go 어플에서 해당 QR코드를 인식하여준다.
 
