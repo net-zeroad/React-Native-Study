@@ -95,3 +95,25 @@ export default StackNavigator;
 - 페이지를 이동하고 타이틀을 바꾸고 동시에 데이터를 넘겨받는 디테일한 방법에 대하여 배웠다.
 - navigation.setOptions 로 페이지를 이동했을 때 타이틀과 스타일을 변경할 수 있다.
 - navigation.navigate 라는 함수로 페이지를 이동할 수 있고 두번째 인자에 데이터를 담아 줌으로써 이동할 때 데이터를 가지고 이동할 수 있다. 또한 그 데이터를 꺼낼 때는 route.params로 꺼낼 수 있다.
+
+
+# 페이지 내용 공유하기 (Share)
+- 결과를 공유해주고 앱 다운로드 주소까지 전달해준다면 앱 홍보하기 쉬울 것이다.
+- 준비
+1. react-native 라이브러리에서 {Share} 를 가져온다.
+`import { Share } from 'react-native'`
+2. 함수 만들기
+```js
+    // 공유하기 버튼을 누르면 이 함수를 호출한다.
+    const share = () =>{
+        Share.share({
+            message: `${tip.title} \n\n ${tip.desc} \n\n ${tip.image}`,
+        });
+    }
+```
+3. 버튼 클릭시 해당 함수 호출
+```js
+    <TouchableOpacity style={styles.likeBtn} onPress={share}>
+        <Text style={styles.likeBtnText}>팁 공유하기</Text>
+    </TouchableOpacity>
+```

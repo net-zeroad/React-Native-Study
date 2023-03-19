@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, ScrollView, Image, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { Text, View, ScrollView, Image, StyleSheet, TouchableOpacity, Alert, Share } from 'react-native';
 
 export default function DetailPage({ navigation, route }) {
 
@@ -29,9 +29,18 @@ export default function DetailPage({ navigation, route }) {
         setTip(params);
     }, []);
 
+    // 찜
     const popup = () => {
         Alert.alert("찜");
     }
+
+    // 공유하기 버튼을 누르면 이 함수를 호출한다.
+    const share = () => {
+        Share.share({
+            message: `${tip.title} \n\n ${tip.desc} \n\n ${tip.image}`,
+        });
+    }
+
 
     return (
         <ScrollView style={styles.mainWrap}>
@@ -39,8 +48,13 @@ export default function DetailPage({ navigation, route }) {
             <Text style={styles.mainTitle}>{tip.title}</Text>
             <Text style={styles.mainText}>{tip.desc}</Text>
             <View style={styles.likeBtnWrap}>
+                {/* 찜 */}
                 <TouchableOpacity style={styles.likeBtn} onPress={popup}>
                     <Text style={styles.likeBtnText}>팁 찜하기</Text>
+                </TouchableOpacity>
+                {/* 공유 */}
+                <TouchableOpacity style={styles.likeBtn} onPress={share}>
+                    <Text style={styles.likeBtnText}>팁 공유하기</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>
