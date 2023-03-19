@@ -117,3 +117,26 @@ export default StackNavigator;
         <Text style={styles.likeBtnText}>팁 공유하기</Text>
     </TouchableOpacity>
 ```
+
+
+# 외부 링크 열기 - Linking
+- 출처를 남기는 버튼 등에 외부 링크로 이동시키기 위하여 사용한다.
+- 깃허브 링크를 누르면 해당 깃허브로 이동하는 기능을 구현할 수 있다.
+- 혹은 전화 버튼을 눌렀을 시 전화 앱이 켜지고 바로 어딘가에 전화를 걸 수 있는 등 다른 화면을 열 수 있게 하는 기능을 구현할 수도 있다.
+1. expo 도구 중 하나인 expo-linking 라이브러리 설치
+`expo install expo-linking`
+2. 사용할 프로젝트 파일에서 import
+`import * as Linking from 'expo-linking';`
+3. 함수 만들기 
+```js
+    const link = () => {
+        Linking.openURL("https://github.com/efforthye");
+    }
+```
+4. 아래와 같이 적용시키기
+```js
+                {/* 외부 링크 */}
+                <TouchableOpacity style={styles.likeBtn} onPress={link}>
+                    <Text style={styles.likeBtnText}>외부 링크</Text>
+                </TouchableOpacity>
+```

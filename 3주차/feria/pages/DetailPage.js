@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, ScrollView, Image, StyleSheet, TouchableOpacity, Alert, Share } from 'react-native';
+import * as Linking from 'expo-linking';
 
 export default function DetailPage({ navigation, route }) {
 
@@ -41,6 +42,11 @@ export default function DetailPage({ navigation, route }) {
         });
     }
 
+    // 외부 링크
+    const link = () => {
+        Linking.openURL("https://github.com/efforthye");
+    }
+
 
     return (
         <ScrollView style={styles.mainWrap}>
@@ -55,6 +61,10 @@ export default function DetailPage({ navigation, route }) {
                 {/* 공유 */}
                 <TouchableOpacity style={styles.likeBtn} onPress={share}>
                     <Text style={styles.likeBtnText}>팁 공유하기</Text>
+                </TouchableOpacity>
+                {/* 외부 링크 */}
+                <TouchableOpacity style={styles.likeBtn} onPress={link}>
+                    <Text style={styles.likeBtnText}>외부 링크</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>
@@ -90,20 +100,23 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     likeBtnWrap: {
-        alignItems: 'center',
+        flexDirection: "row",
+        width: 350,
+        alignSelf: 'center'
     },
     likeBtn: {
         width: 100,
-        height: 40,
-        backgroundColor: "black",
-        borderColor: "deeppink",
-        borderRadius: 10,
+        marginTop: 20,
+        marginRight: 10,
+        marginLeft: 10,
+        padding: 10,
         borderWidth: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 20
+        borderColor: 'deeppink',
+        borderRadius: 7,
+        flex: 1,
     },
     likeBtnText: {
-        color: 'white'
+        color: 'white',
+        textAlign: 'center'
     }
 });
