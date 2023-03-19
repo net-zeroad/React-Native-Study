@@ -7,7 +7,8 @@ import Loading from '../components/Loading';
 
 import { StatusBar } from 'expo-status-bar';
 
-export default function MainPage() {
+// MainPage가 페이지화 되었기 때문에 navigation과 route를 바로 사용할 수 있다.
+export default function MainPage({ navigation, route }) {
 
     // 메인 이미지의 절대경로 주소를 가져온다.
     const main = "https://firebasestorage.googleapis.com/v0/b/sparta-image.appspot.com/o/lecture%2Fmain.png?alt=media&token=8e5eb78d-19ee-4359-9209-347d125b322c";
@@ -19,13 +20,15 @@ export default function MainPage() {
 
     // useEffect() 를 사용해 본다.
     useEffect(() => {
-
+        // navigation.setOptions({}) : 페이지의 스타일을 변경한다.
+        navigation.setOptions({
+            title: '혜리미에 꿀팁 ㅇㅅㅇ'
+        });
         setTimeout(() => {
             setState(data.tip);
             setCategory(data.tip);
             setReady(false);
         }, 1000);
-
     }, []);
 
     // 카테고리 설정 함수
@@ -98,7 +101,8 @@ export default function MainPage() {
 
                     {/* {tipCards.map((item, idx) => ( */}
                     {category.map((item, idx) => (
-                        <Card item={item} idx={idx} key={idx} />
+                        // 네비게이션 기능을 Card 컴포넌트에 넘겨준다.
+                        <Card navigation={navigation} item={item} idx={idx} key={idx} />
                     ))}
 
                 </View>
