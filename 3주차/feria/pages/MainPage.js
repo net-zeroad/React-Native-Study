@@ -64,7 +64,7 @@ export default function MainPage() {
                 {/* 상태 바 라이브러리를 사용하여 상태 바야 하얀색(안보이게)으로 보이게 하였다. */}
                 <StatusBar style='light' />
 
-                <Text style={styles.title}>혜리미에 꿀팁 ㅇㅅㅇ</Text>
+                {/* <Text style={styles.title}>혜리미에 꿀팁 ㅇㅅㅇ</Text> */}
                 <Text style={styles.weather}>오늘의 날씨: {todayWeather + "°C, " + todayCondition}</Text>
 
                 <Image style={styles.mainImage} source={{ uri: main }} />
