@@ -9,7 +9,8 @@ export default function Card({ item, idx, navigation }) {
         idx % 2 == 0 ? (
             // 홀수 번째일 경우(idx는 0부터 시작하기 때문)
             <TouchableOpacity style={styles.card} key={idx} onPress={() => {
-                { navigation.navigate("DetailPage") }
+                // 해당 Card를 누를 때 item을 함께 보낸다.
+                { navigation.navigate("DetailPage", item) }
             }}>
                 <Image style={styles.cardImage} source={{ uri: item.image }} />
                 <View style={styles.cardText}>
@@ -23,7 +24,8 @@ export default function Card({ item, idx, navigation }) {
         ) : (
             // 짝수 번째일 경우
             <TouchableOpacity style={styles.card} key={idx} onPress={() => {
-                { navigation.navigate("DetailPage") }
+                // 해당 Card를 누를 때 item을 함께 보낸다.
+                { navigation.navigate("DetailPage", item) }
             }}>
                 {/* <Text>{"     "}</Text> */}
                 <Image style={styles.cardImage} source={{ uri: item.image }} />

@@ -223,20 +223,17 @@ const styles = StyleSheet.create({
         // 해당 컨텐츠의 아래 부분에 생길 border의 크기를 지정해준다.
         borderBottomWidth: 0.5,
         // 해당 컨텐츠의 아래 부분에 생길 border의 색상을 지정해준다.
-        // borderBottomColor: "#eee",
-        borderBottomColor: "lightpink",
+        // borderBottomColor: "lightpink",
+        borderBottomColor: "#eee",
         paddingBottom: 10
     },
     card2: {
         flex: 1,
-        //컨텐츠들(이미지와 텍스트 영역)을 가로로 나열한다.
-        //세로로 나열은 column <- 디폴트 값임 (flexDirection : 중요)
         flexDirection: "row",
         margin: 10,
-        // 해당 컨텐츠의 아래 부분에 생길 border의 크기를 지정해준다.
         borderBottomWidth: 0.5,
-        // 해당 컨텐츠의 아래 부분에 생길 border의 색상을 지정해준다.
-        borderBottomColor: "lightblue",
+        // borderBottomColor: "lightblue",
+        borderBottomColor: "#eee",
         paddingBottom: 10,
     },
 
