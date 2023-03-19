@@ -69,3 +69,22 @@ const StackNavigator = () =>{
 }
 export default StackNavigator;
 ```
+3. 페이지 이동 시 아래 코드 입력
+- 페이지 이동
+`navigation.navigate("DetailPage");`
+- 페이지의 제목을 설정할 수도 있다.
+`navigation.setOptions({title : "나만의 꿀팁"});`
+- 아래와 같이 name 속성을 전달해주고, 두 번째 인자로 객체 데이터를 전달해주면 Detail 페이지에서 두 번째 인자로 전달된 객체 데이터를 route 객체로 받을 수 있다.
+`natigation.navigate("DetailPage", {title : title})`
+- 전달받은 데이터를 받는 객체 (route) : 비구조 할당 방식으로 route에 params 객체 키로 연결되어 전달되는 데이터를 꺼내 사용한다. navigate 함수로 전달되는 객체 데이터는 다음과 같은 모습이다.
+```js
+{
+    route : {
+        params : {
+            title : title
+        }
+    }
+}
+```
+- 실제 받는 부분
+`const {title} = route.params;`
