@@ -88,3 +88,10 @@ export default StackNavigator;
 ```
 - 실제 받는 부분
 `const {title} = route.params;`
+
+
+# 정리
+- 로딩화면 혹은 초기 데이터를 보여줌으로서 데이터가 없을 때의 에러를 방지할 수 있다.
+- 페이지를 이동하고 타이틀을 바꾸고 동시에 데이터를 넘겨받는 디테일한 방법에 대하여 배웠다.
+- navigation.setOptions 로 페이지를 이동했을 때 타이틀과 스타일을 변경할 수 있다.
+- navigation.navigate 라는 함수로 페이지를 이동할 수 있고 두번째 인자에 데이터를 담아 줌으로써 이동할 때 데이터를 가지고 이동할 수 있다. 또한 그 데이터를 꺼낼 때는 route.params로 꺼낼 수 있다.
